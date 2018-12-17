@@ -1,0 +1,116 @@
+
+<!-- seccion de contenido -->
+<section class="w3-container w3-padding-32" style="margin-left: 300px;">
+  <div class="w3-container">
+    <h2 class="w3-center">Instrumentos</h2>
+    <div class="w3-bar w3-light-grey w3-padding-16">
+      <button class="w3-button w3-xlarge w3-circle w3-blue w3-margin-left" onclick="document.getElementById('registerI').style.display='block'">+</button>
+      <div class="w3-dropdown-hover">
+        <button class="w3-button">Tamaño <i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#" class="w3-bar-item w3-button">pequeño</a>
+          <a href="#" class="w3-bar-item w3-button">mediano</a>
+          <a href="#" class="w3-bar-item w3-button">grande</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover">
+        <button class="w3-button">Tipo <i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="#" class="w3-bar-item w3-button">viento</a>
+          <a href="#" class="w3-bar-item w3-button">metal</a>
+          <a href="#" class="w3-bar-item w3-button">percución</a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-panel w3-green" id="msgCreateInstrument" style="display:none">
+      <h3 class="w3-center">Instrumento registrado exitosamente</h3>
+    </div>
+    <table class="w3-table-all w3-hoverable">
+      <thead>
+        <tr class="w3-light-grey">
+          <th class="w3-center">Nombre</th>
+          <th class="w3-center">Codigo</th>
+          <th class="w3-center">Disponible</th>
+          <th class="w3-center">Tipo</th>
+          <th class="w3-center">Eliminar</th>
+          <th class="w3-center">Editar</th>
+        </tr>
+      </thead>
+      <tbody id="tableInstrument">
+
+      </tbody>
+    </table>
+    </div>
+</section>
+<div id="registerI" class="w3-modal">
+  <div class="w3-modal-content w3-light-grey">
+    <header class="w3-container w3-indigo">
+    <span onclick="closeModal3()"
+    class="w3-button w3-display-topright">&times;</span>
+    <h2 class="w3-center">Registrar Instrumento</h2>
+  </header>
+    <div class="w3-container" style="max-width: 600px; margin: 0 auto;">
+      <form id="formRegisterInstrument">
+        <p class="w3-padding-8">
+          <label class="w3-margin-top"><b>Nombre del instrumento</b></label>
+          <input class="w3-input w3-border w3-round dataForm3" type="text">
+        </p>
+        <p class="w3-padding-8">
+          <label class="w3-margin-top"><b>Codigo del instrumento</b></label>
+          <input class="w3-input w3-border w3-round dataForm3" type="text">
+        </p>
+        <p class="w3-padding-8">
+          <label class="w3-margin-top"><b>Procedencia</b></label>
+          <input class="w3-input w3-border w3-round dataForm3" type="text">
+        </p>
+        <p><b>Instrumento disponible para prestamo: </b></p>
+        <p>
+        <select class="w3-select w3-padding-8 w3-border w3-round dataForm3" name="option">
+          <option value="" disabled selected>Seleccione una opcion</option>
+          <option value="disponible">Disponible</option>
+          <option value="no disponible">No disponible</option>
+        </select>
+        <p class="w3-margin-top"><b>Tipo de instrumento</b></p>
+        <select class="w3-select w3-padding-8 w3-border w3-round dataForm3" name="option">
+          <option value="" disabled selected>Seleccione un tipo de instrumento</option>
+          <option value="viento">Viento</option>
+          <option value="metal">Metal</option>
+          <option value="percucion">percicion</option>
+        </select>
+        <p class="w3-margin-top"><b>Tamaño de instrumento</b></p>
+        <select class="w3-select w3-padding-8 w3-border w3-round dataForm3" name="option">
+          <option value="" disabled selected>Seleccione un tamaño de instrumento</option>
+          <option value="pequeño">Pequeño</option>
+          <option value="mediano">Mediano</option>
+          <option value="grande">Grande</option>
+        </select>
+        <div class="w3-panel w3-red" id="msgAlertInstrument" style="display:none">
+          <h3 class="w3-center">Debe llenar todos los campos</h3>
+        </div>
+      </form>
+      <div class="w3-center">
+        <p><button class="w3-btn w3-aqua w3-round" id="registrarInstrument"><b>Registrar</b></button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="deleteInstrument" class="w3-modal">
+  <div class="w3-modal-content w3-light-grey">
+    <header class="w3-container w3-aqua">
+    <h2 class="w3-center">¿Seguro que desea eliminar el instrumento?</h2>
+    </header>
+    <div class="w3-container" style="max-width: 800px; margin: 0 auto;">
+        <div class="w3-row w3-padding-16 w3-center">
+          <div class="w3-col l6 m6 s12" style="padding-left:20px; padding-right:20px;">
+
+            <button class="w3-button w3-block w3-indigo w3-round-large" id="yesDeleteI"><b>Si</b></button>
+          </div>
+          <div class="w3-col l6 m6 s12" style="padding-left:20px; padding-right:20px;">
+
+            <button class="w3-button w3-block w3-indigo w3-round-large"  onclick="document.getElementById('deleteInstrument').style.display='none'"><b>No</b></button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+

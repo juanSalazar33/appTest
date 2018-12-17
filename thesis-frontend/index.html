@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TESIS</title>
+    <link rel="stylesheet" href="content/lib/w3.css">
+    <link rel="stylesheet" href="content/lib/estilos.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!-- seccion de menu -->
+    <header class="w3-light-grey w3-animate-left w3-hide" id="navBar">
+      <div class="w3-col l3">
+        <div class="w3-container w3-row w3-padding-32">
+            <div class="w3-col l12 m12 s12 w3-bar">
+              <span class="w3-center">Bienvenido, <strong id = "nameUser"></strong></span>
+              <!-- <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> -->
+              <a href="#" class="w3-bar-item w3-button" onclick="document.getElementById('exit').style.display='block'">
+                <b>cerrar sessión</b>
+              </a>
+            </div>
+        </div>
+      </div>
+      <div class="w3-col l3">
+          <button class="w3-button w3-block w3-light-blue optionNav" id="ALM">Usuarios</button>
+      </div>
+      <div class="w3-col l3">
+          <button class="w3-button w3-block w3-aqua optionNav" id="CMT">Reportes</button>
+      </div>
+      <div class="w3-col l3">
+          <button class="w3-button w3-block w3-indigo optionNav" id="IMT">Productos</button>
+      </div>
+    </header>
+    <!-- seccion de contenido -->
+    <section style="max-width: 700px; margin: 0 auto;" id="loginForm">
+        <h1 class="w3-center">Gestion de productos</h1>
+        <div class="w3-card-4 w3-light-grey">
+          <div class="w3-container w3-light-blue">
+            <h2>Iniciar sesión</h2>
+          </div>
+          <div class="w3-padding-16">
+            <form  id="formLogin" class="w3-container">
+           
+                <label>Cedula de identidad</label>
+                <input class="w3-input w3-border w3-round dataForm" id="email" name="email" type="text">
+                <label class="w3-text-red error" for="email"></label><br>
+             
+                <label>Contraseña</label>
+                <input class="w3-input w3-border w3-round dataForm" id="clave" name="clave" type="password">
+                <label class="w3-text-red error" for="clave"></label>
+            </form> 
+            <p class="w3-text-red error w3-hide" id="errorLogin" style="text-align: center">Usuario o clave invalidos</p>          
+            <p><button  style="width: 663px; margin: 0 auto;"class="w3-button w3-block w3-indigo w3-round-large" id="loginBtn"><b>Iniciar sesión</b></button></p>
+          </div>
+        </div>
+    </section>
+    <div id="Ocontrasena" class="w3-modal">
+        <div class="w3-modal-content w3-light-grey">
+          <header class="w3-container w3-aqua">
+          <span onclick="document.getElementById('Ocontrasena').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+          <h2 class="w3-center">Recuperar Contraseña</h2>
+        </header>
+          <div class="w3-container" style="max-width: 800px; margin: 0 auto;">
+            <div class="w3-row" id="recuperar1">
+              <p class="w3-center w3-large">
+                Ingrese su cedula para iniciar el proceso de recuperación
+              </p>
+              <p class="w3-padding-8">
+                <label class="w3-margin-top"><b>Cedula de identidad</b></label>
+                <input class="w3-input w3-border w3-round" type="text">
+              </p>
+              <div class="w3-center">
+                <p><button class="w3-btn w3-blue" onclick="document.getElementById('recuperar1').style.display='none'"
+                  id="r1"><b>Enviar</b></button></p>
+              </div>
+            </div>
+            <div class="w3-row w3-hide" id="recuperar2">
+                <p class="w3-center w3-large">
+                  Responda las preguntas de seguridad:
+                </p>
+                <p class="w3-padding-8">
+                  <label class="w3-margin-top"><b>¿Cual es la profesión de su abuelo?</b></label>
+                  <input class="w3-input w3-border w3-round" type="text">
+                </p>
+                <p class="w3-padding-8">
+                    <label class="w3-margin-top"><b>¿Cual es su marca de carros favorito?</b></label>
+                    <input class="w3-input w3-border w3-round" type="text">
+                  </p>
+                <div class="w3-center">
+                  <p><button class="w3-btn w3-blue" onclick="document.getElementById('recuperar2').style.display='none'" id="r2"><b>Enviar</b></button></p>
+                </div>
+            </div>
+            <div class="w3-row w3-hide" id="recuperar3">
+                <p class="w3-padding-8">
+                  <label class="w3-margin-top"><b>Ingrese su nueva clave</b></label>
+                  <input class="w3-input w3-border w3-round" type="text">
+                </p>
+                <p class="w3-padding-8">
+                    <label class="w3-margin-top"><b>Confirme su clave</b></label>
+                    <input class="w3-input w3-border w3-round" type="text">
+                  </p>
+                <div class="w3-center">
+                  <p><button class="w3-btn w3-blue" onclick="document.getElementById('Ocontrasena').style.display='none'"><b>Enviar</b></button></p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="exit" class="w3-modal">
+        <div class="w3-modal-content w3-light-grey">
+          <header class="w3-container w3-aqua">
+          <h2 class="w3-center">¿Seguro que desea cerrar session</h2>
+          </header>
+          <div class="w3-container" style="max-width: 800px; margin: 0 auto;">
+              <div class="w3-row w3-padding-16 w3-center">
+                <div class="w3-col l6 m6 s12" style="padding-left:20px; padding-right:20px;">
+
+                  <button class="w3-button w3-block w3-indigo w3-round-large" id="exitSystem"><b>Si</b></button>
+                </div>
+                <div class="w3-col l6 m6 s12" style="padding-left:20px; padding-right:20px;">
+
+                  <button class="w3-button w3-block w3-indigo w3-round-large"  onclick="document.getElementById('exit').style.display='none'"><b>No</b></button>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+    <section id="content">
+
+    </section>
+    <script src="content/js/sicoins.js"></script>
+    <script src="content/lib/validate.js"></script>
+    <script src="content/js/alumno.js"></script>
+    <script src="content/js/instrumento.js"></script>
+    <script src="content/js/contrato.js"></script>
+    <script>
+      function closeModal(){
+        document.getElementById('registerU').style.display='none';
+        document.getElementById('msgAlertFormR').style.display='none';
+        document.getElementById('formRegister').reset(); 
+      }
+      function closeModal2(){
+        document.getElementById('registerA').style.display='none';
+        document.getElementById('msgAlertStudent').style.display='none';
+        document.getElementById('formRegisterAlumno').reset(); 
+      }
+      function closeModal3(){
+        document.getElementById('registerI').style.display='none';
+        document.getElementById('msgAlertInstrument').style.display='none';
+        document.getElementById('formRegisterInstrument').reset(); 
+      }
+    </script>
+  </body>
+</html>
